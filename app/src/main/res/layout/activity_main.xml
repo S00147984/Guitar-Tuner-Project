@@ -1,34 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="project.tuner.guitartuner.MainActivity">
 
-    <Button
-        android:text="Listen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnListen"
-        android:layout_marginTop="82dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
 
-    <Button
-        android:text="Stop"
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp"
-        android:id="@+id/btnStop"
-        android:layout_alignBaseline="@+id/btnListen"
-        android:layout_alignBottom="@+id/btnListen"
-        android:layout_toRightOf="@+id/btnListen"
-        android:layout_toEndOf="@+id/btnListen" />
-</RelativeLayout>
+        android:layout_height="fill_parent" >
+
+        <RadioGroup
+            android:id="@+id/radio"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingRight="10dp" >
+
+            <RadioButton
+                android:id="@+id/stnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:onClick="onRadioButtonClicked"
+                android:tag="246.942"
+                android:text="Standard" />
+
+            <RadioButton
+                android:id="@+id/dd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:tag="195.998"
+                android:text="Drop D" />
+
+            <RadioButton
+                android:id="@+id/dstnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:tag="146.832"
+                android:text="D Standard" />
+
+            <RadioButton
+                android:id="@+id/dc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:tag="110.0"
+                android:text="Drop C" />
+
+            <RadioButton
+                android:id="@+id/cstnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:tag="82.4069"
+                android:text="C Standard" />
+
+            <RadioButton
+                android:id="@+id/db"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:tag="61.7354"
+                android:text="Drop B" />
+
+            <RadioButton
+                android:id="@+id/bstnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:tag="61.7354"
+                android:text="B Standard" />
+            <RadioButton
+                android:id="@+id/da"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:tag="61.7354"
+                android:text="Drop A" />
+
+        </RadioGroup>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+         <RelativeLayout
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:orientation="vertical" >
+
+             <Button
+                 android:text="E"
+                 android:layout_width="120dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="48dp"
+                 android:layout_alignParentBottom="true"
+                 android:layout_toLeftOf="@+id/stringA"
+                 android:layout_toStartOf="@+id/target"
+                 android:tag="82.41"
+                 android:backgroundTint="#00ff00"
+                 android:id="@+id/stringE"
+                 android:onClick="onButtonClicked" />
+
+
+             <Button
+                 android:text="A"
+                 android:layout_width="120dp"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:layout_alignParentBottom="true"
+                 android:tag="110.00"
+                 android:layout_marginBottom="48dp"
+                 android:backgroundTint="#00ff00"
+                 android:onClick="onButtonClicked"
+                 android:id="@+id/stringA" />
+
+             <Button
+                 android:text="D"
+                 android:layout_width="120dp"
+                 android:layout_height="wrap_content"
+                 android:tag="146.83"
+                 android:layout_marginBottom="48dp"
+                 android:layout_alignParentBottom="true"
+                 android:layout_toRightOf="@+id/stringA"
+                 android:layout_toEndOf="@+id/target"
+                 android:backgroundTint="#00ff00"
+                 android:onClick="onButtonClicked"
+                 android:id="@+id/stringD" />
+
+             <Button
+                 android:text="G"
+                 android:layout_width="120dp"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:layout_toLeftOf="@+id/stringA"
+                 android:layout_toStartOf="@+id/target"
+                 android:tag="196.00"
+                 android:backgroundTint="#00ff00"
+                 android:onClick="onButtonClicked"
+                 android:id="@+id/stringG" />
+
+             <Button
+                 android:text="B"
+                 android:layout_width="120dp"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:layout_centerHorizontal="true"
+                 android:tag="246.94"
+                 android:backgroundTint="#00ff00"
+                 android:onClick="onButtonClicked"
+                 android:id="@+id/stringb" />
+
+             <Button
+                 android:text="E"
+                 android:layout_width="120dp"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:layout_toRightOf="@+id/stringA"
+                 android:layout_toEndOf="@+id/target"
+                 android:tag="329.63"
+                 android:backgroundTint="#00ff00"
+                 android:onClick="onButtonClicked"
+                 android:id="@+id/stringes" />
+
+             <TextView
+                 android:id="@+id/target"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Target Frequency : 0.0Hz"
+                 android:textStyle="bold"
+                 android:textSize="15dp"
+                 android:layout_alignParentTop="true"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginTop="96dp" />
+
+         </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
